@@ -1,0 +1,110 @@
+db database name : test-golang
+
+enviroment belum saya setup , jadi hanya perlu membuat database dengan nama test-golang
+
+jalankan
+go run main.go
+
+terdapat package seeder pada main.go
+seeders.Seed()
+
+jika pertama kali dijalankan akan menggenerate dummy data
+jika dummy data sudah tersedia mohon diberi comment saya
+
+// 	seeders.Seed()
+
+TEST LOGIC
+
+Test 1 :
+http://localhost:8080/api/test1
+method: POST
+json :
+{
+    "data" : 10
+}
+
+Test 2 :
+http://localhost:8080/api/test2
+method: POST
+form-data :
+data(file) = input.txt
+
+Test 3 :
+http://localhost:8080/api/test3
+method: GET
+
+Test 4 :
+http://localhost:8080/api/test4
+method: POST
+form-data :
+data = katak
+
+Test 5 :
+http://localhost:8080/api/test5
+method: POST
+json :
+{
+    "data" : 10
+}
+
+API GOLANG
+
+Register :
+http://localhost:8080/api/register
+method: POST
+json :
+{
+    "email" : "test@gmail.com",
+    "password" : "123",
+    "name" : "johnny"
+}
+
+Login : 
+http://localhost:8080/api/login
+method: POST
+json :
+{
+    "email" : "test@gmail.com",
+    "password" : "123"
+}
+
+Product Dengan Pagination :
+http://localhost:8080/api/products/1?sort=name&order=desc
+atau secara defult pagination by id
+http://localhost:8080/api/products/1
+method: GET
+bearer token : JWT Token 
+
+Product Dengan By Id :
+http://localhost:8080/api/product/1
+method: GET
+bearer token : JWT Token 
+
+Create Product :
+http://localhost:8080/api/product
+method: POST
+bearer token : JWT Token 
+form-data :
+name : baju
+description : baju bagus
+price : 20000
+image(file) : test.png
+
+Update Product :
+http://localhost:8080/api/product/1
+method: PUT
+bearer token : JWT Token 
+form-data :
+name : baju kemeja
+description : baju nya lusuh
+price : 20000
+image(file) : OPTIONAL
+
+Delete Product :
+http://localhost:8080/api/product/1
+method: DELETE
+bearer token : JWT Token 
+
+Image Product URL : 
+method: GET
+http://localhost:8080/images/contohgambar.jpg
